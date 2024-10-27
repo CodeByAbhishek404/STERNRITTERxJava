@@ -1,0 +1,438 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Full-screen background styling */
+body {
+    background-image: url('new\ coin.webp'); /* Replace with your full-body image path */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Arial', sans-serif;
+    color: #d4af37; /* Gold color for text */
+}
+
+/* Header styling */
+.header {
+    /* background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    display: flex; */
+    justify-content: space-between; /* Align items */
+    /* align-items: center; Center items vertically */
+
+
+    
+        background: rgba(0, 0, 0, 0.8);
+        padding: 20px;
+        display: flex;
+        align-items: center; /* Center items vertically */
+
+    
+}
+
+/* Project name styling */
+.logo {
+    font-size: 2rem;
+    
+}
+
+.logo-image {
+    height: 80px; /* Adjust height as needed */
+    margin-right: 25px; /* Space between logo and project name */
+    width: 60px; /* Compact size */
+    height: 60px;
+    border-radius: 50%; /* Circular shape */
+    background-color: rgba(212, 175, 55, 0.9); /* Gold color background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-right: 10px; /* Space between logo and project name */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Adds subtle depth */
+    border: 2px solid #d4af37
+}
+
+/* Navigation styling */
+.nav {
+    display: flex;
+}
+
+.nav a {
+    color: #d4af37; /* Gold color */
+    margin: 0 15px;
+    text-decoration: none;
+    transition: color 0.3s, transform 0.3s; /* Transition for hover effect */
+}
+
+.nav a:hover {
+    color: #fff;
+    transform: translateY(-3px); /* Slight lift on hover */
+}
+
+/* Main content styling */
+.content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px; /* Padding for better spacing */
+}
+
+/* Intro section styling */
+.intro {
+    max-width: 600px;
+    background: rgba(28, 28, 28, 0.8);
+    padding: 40px;
+    border-radius: 8px;
+}
+
+/* Improved spacing */
+.intro h2 {
+    margin-bottom: 15px; /* Space between heading and paragraph */
+}
+
+.intro p {
+    margin-bottom: 20px; /* Space between paragraph and button */
+}
+
+/* Button styling */
+.cta-button {
+    background-color: #d4af37; /* Gold color */
+    color: #000;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; /* Animation for button */
+}
+
+.cta-button:hover {
+    background-color: #b5942e; /* Darker gold on hover */
+    transform: translateY(-3px); /* Slight lift on hover */
+}
+
+/* Form container styling */
+.form-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    align-items: center;
+    justify-content: center;
+}
+
+.form-container.show {
+    display: flex;
+    animation: fadeIn 0.5s;
+}
+
+/* Form section styling */
+.form-section {
+    background: rgba(255, 255, 255, 0.9);
+    color: #000;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Close button for the form */
+.form-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    color: #d4af37; /* Gold color */
+    font-size: 1.5rem;
+}
+
+/* Input styling */
+input[type="email"],
+input[type="password"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Button styling for form */
+form button {
+    width: 100%;
+    background-color: #d4af37; /* Gold color */
+    color: #000;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; /* Animation for button */
+}
+
+form button:hover {
+    background-color: #b5942e; /* Darker gold on hover */
+    transform: translateY(-3px); /* Slight lift on hover */
+}
+
+/* Footer styling */
+.footer {
+    background: rgba(0, 0, 0, 0.8);
+    text-align: center;
+    padding: 10px;
+}
+
+/* Footer link styling */
+.footer a {
+    color: #d4af37; /* Gold color */
+    text-decoration: none;
+}
+
+
+/* Transactions Section */
+.transactions-section {
+    max-width: 800px;
+    margin: auto;
+    background: rgba(28, 28, 28, 0.8);
+    padding: 20px;
+    border-radius: 8px;
+    color: #d4af37; /* Gold color */
+}
+
+.transactions-section h2 {
+    margin-bottom: 15px;
+}
+
+.transactions-section p {
+    margin-bottom: 20px;
+}
+
+/* Transactions Table */
+.transactions-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    color: #fff;
+}
+
+.transactions-table th, .transactions-table td {
+    border: 1px solid #444;
+    padding: 10px;
+    text-align: center;
+}
+
+.transactions-table th {
+    background-color: rgba(0, 0, 0, 0.9); /* Darker background */
+    color: #d4af37; /* Gold text */
+}
+
+.transactions-table tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.7); /* Darker background for even rows */
+}
+
+.add-transaction-section {
+    max-width: 600px;
+    margin: auto;
+    background: rgba(28, 28, 28, 0.8);
+    padding: 20px;
+    border-radius: 8px;
+    color: #d4af37;
+    margin-bottom: 20px;
+}
+
+.add-transaction-section h3 {
+    margin-bottom: 15px;
+}
+
+.add-transaction-section label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.add-transaction-section input, .add-transaction-section select, .add-transaction-section button {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #444;
+    background-color: #222;
+    color: #fff;
+}
+
+.add-transaction-section button {
+    background-color: #d4af37;
+    color: #222;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+
+
+
+
+/* Dashboard Cards Styling */
+.dashboard-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 20px 0; /* Space around the cards */
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.9);
+    color: #000;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    margin: 10px; /* Margin for card spacing */
+    flex: 1 1 250px; /* Responsive flex properties */
+    text-align: center;
+    transition: transform 0.3s; /* Animation for hover effect */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+.card h3 {
+    margin-bottom: 10px; /* Space below the heading */
+    font-size: 1.5rem; /* Increase font size */
+    color: #d4af37; /* Gold color for headings */
+}
+
+.card p {
+    font-size: 2rem; /* Larger text for values */
+    font-weight: bold; /* Bold font for emphasis */
+    color: #000; /* Color for values */
+}
+
+.recent-transactions {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+}
+
+.recent-transactions li {
+    margin: 5px 0; /* Space between transactions */
+    font-size: 1rem; /* Regular font size */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .dashboard-cards {
+        flex-direction: column; /* Stack cards vertically on smaller screens */
+        align-items: center; /* Center cards */
+    }
+
+    .card {
+        width: 90%; /* Card width for smaller screens */
+    }
+}
+
+
+.budget-section {
+    max-width: 600px; /* Max width for the section */
+    margin: auto; /* Center the section */
+    background: rgba(28, 28, 28, 0.9); /* Darker background */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+    color: #d4af37; /* Gold color for text */
+    text-align: center; /* Center the text */
+}
+
+.budget-card {
+    background: rgba(255, 255, 255, 0.95); /* Light background for contrast */
+    color: #000; /* Black text for readability */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Shadow for card depth */
+    margin-bottom: 15px; /* Space below the card */
+}
+
+.budget-card h3 {
+    margin-bottom: 10px; /* Space below heading */
+}
+
+.budget-card p {
+    margin: 8px 0; /* Space between paragraphs */
+}
+
+.budget-card span {
+    font-weight: bold; /* Bold for emphasis */
+    color: #d4af37; /* Gold color for highlighted values */
+}
+
+/* Form styling */
+.budget-form {
+    background: rgba(255, 255, 255, 0.9); /* Light background for the form */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Shadow for form */
+    margin-top: 15px; /* Space above the form */
+    color: #000; /* Black text for form */
+}
+
+.budget-form label {
+    display: block; /* Block display for labels */
+    margin: 10px 0 5px; /* Space around labels */
+}
+
+.budget-form input[type="number"] {
+    width: calc(100% - 20px); /* Full width minus padding */
+    padding: 10px; /* Padding for input */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    margin-bottom: 15px; /* Space below inputs */
+}
+
+.budget-form .cta-button {
+    background-color: #d4af37; /* Gold color */
+    color: #000;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; /* Animation for button */
+}
+
+.budget-form .cta-button:hover {
+    background-color: #b5942e; /* Darker gold on hover */
+    transform: translateY(-3px); /* Slight lift on hover */
+}
+
+
+
+/* Animation for form display */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    .header, .footer {
+        padding: 15px;
+    }
+
+    .intro {
+        padding: 30px;
+    }
+
+    .form-section {
+        width: 90%;
+    }
+}

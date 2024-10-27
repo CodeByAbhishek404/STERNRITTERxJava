@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wealth Smith - Dashboard</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to the external CSS file -->
+</head>
+<body>
+    <header class="header">
+        <img src="logoo.webp" alt="Wealth Smith Logo" class="logo-image"> <!-- Add your logo image here -->
+        <h1 class="logo">WealthSmith</h1>
+        <nav class="nav">
+            <a href="index.html">Home</a>
+            <a href="transaction.html">Transactions</a>
+            <a href="budget.html">Budget</a>
+            <a href="reports.html">Reports</a>
+            <a href="setting.html">Settings</a>
+        </nav>
+    </header>
+
+    <main class="content">
+        <section class="intro">
+            <h2>Your Financial Overview</h2>
+            <p>Keep track of your finances at a glance with our detailed dashboard.</p>
+        </section>
+
+        <section class="dashboard-cards">
+            <div class="card">
+                <h3>Total Balance</h3>
+                <p class="balance">₹50,000</p>
+            </div>
+            <div class="card">
+                <h3>Total Transactions</h3>
+                <p class="transaction-count">150</p>
+            </div>
+            <div class="card">
+                <h3>Budget Utilization</h3>
+                <p class="budget-utilization">65%</p>
+            </div>
+            <div class="card">
+                <h3>Recent Transactions</h3>
+                <ul class="recent-transactions">
+                    <li>Groceries: ₹2,000</li>
+                    <li>Utilities: ₹1,500</li>
+                    <li>Dining Out: ₹1,000</li>
+                </ul>
+            </div>
+        </section>
+
+        <button class="cta-button" id="getStartedBtn">Get Started</button>
+
+        <div class="form-container" id="formContainer">
+            <div class="form-section" id="loginForm">
+                <h2>Log In</h2>
+                <div class="form-close" id="closeForm">&times;</div>
+                <form>
+                    <label for="loginEmail">Email:</label>
+                    <input type="email" id="loginEmail" required>
+                    <label for="loginPassword">Password:</label>
+                    <input type="password" id="loginPassword" required>
+                    <button type="submit">Log In</button>
+                </form>
+                <p>Don't have an account? <span id="showSignup">Sign Up</span></p>
+            </div>
+            <div class="form-section" id="signupForm" style="display: none;">
+                <h2>Sign Up</h2>
+                <div class="form-close" id="closeSignupForm">&times;</div>
+                <form>
+                    <label for="signupEmail">Email:</label>
+                    <input type="email" id="signupEmail" required>
+                    <label for="signupPassword">Password:</label>
+                    <input type="password" id="signupPassword" required>
+                    <button type="submit">Sign Up</button>
+                </form>
+                <p>Already have an account? <span id="showLogin">Log In</span></p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2023 Wealth Smith. All rights reserved. | <a href="#privacy">Privacy Policy</a> | <a href="#contact">Contact Us</a></p>
+    </footer>
+
+    <script>
+        // Script for handling form display and animations
+        const getStartedBtn = document.getElementById('getStartedBtn');
+        const formContainer = document.getElementById('formContainer');
+        const closeForm = document.getElementById('closeForm');
+        const closeSignupForm = document.getElementById('closeSignupForm');
+        const loginForm = document.getElementById('loginForm');
+        const signupForm = document.getElementById('signupForm');
+        const showSignup = document.getElementById('showSignup');
+        const showLogin = document.getElementById('showLogin');
+
+        getStartedBtn.addEventListener('click', () => {
+            formContainer.classList.add('show');
+        });
+
+        closeForm.addEventListener('click', () => {
+            formContainer.classList.remove('show');
+        });
+
+        closeSignupForm.addEventListener('click', () => {
+            formContainer.classList.remove('show');
+        });
+
+        showSignup.addEventListener('click', () => {
+            loginForm.style.display = 'none';
+            signupForm.style.display = 'block';
+        });
+
+        showLogin.addEventListener('click', () => {
+            signupForm.style.display = 'none';
+            loginForm.style.display = 'block';
+        });
+    </script>
+</body>
+</html>

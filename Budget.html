@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wealth Smith - Budget Management</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <header class="header">
+        <img src="logoo.webp" alt="Wealth Smith Logo" class="logo-image"> <!-- Add your logo image here -->
+        <h1 class="logo">WealthSmith</h1>
+        <nav class="nav">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="transaction.html">Transactions</a>
+            <a href="budget.html">Budget</a>
+            <a href="reports.html">Reports</a>
+            <a href="setting.html">Settings</a>
+        </nav>
+    </header>
+
+    <main class="content">
+        <section class="budget-section">
+            <h2>Budget Management</h2>
+            <div class="budget-card">
+                <h3>Total Budget: <span>₹50,000</span></h3>
+                <p>Amount Spent: <span>₹30,000</span></p>
+                <p>Remaining Budget: <span>₹20,000</span></p>
+                <button class="cta-button">View Details</button>
+            </div>
+
+            <h3>Update Your Budget</h3>
+            <form class="budget-form">
+                <label for="total-budget">Total Budget:</label>
+                <input type="number" id="total-budget" placeholder="Enter total budget" required>
+
+                <label for="amount-spent">Amount Spent:</label>
+                <input type="number" id="amount-spent" placeholder="Enter amount spent" required>
+
+                <button type="submit" class="cta-button">Update Budget</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2023 Wealth Smith. All rights reserved. | <a href="#privacy">Privacy Policy</a> | <a href="#contact">Contact Us</a></p>
+    </footer>
+</body>
+</html>
