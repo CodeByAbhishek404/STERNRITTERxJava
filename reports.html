@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports - Wealth Smith</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to the external CSS file -->
+</head>
+<body>
+    <header class="header">
+        <img src="logoo.webp" alt="Wealth Smith Logo" class="logo-image">
+        <h1 class="logo">WealthSmith</h1>
+        <nav class="nav">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="transaction.html">Transactions</a>
+            <a href="budget.html">Budget</a>
+            <a href="reports.html">Reports</a>
+            <a href="setting.html">Settings</a>
+        </nav>
+    </header>
+
+    <main class="content">
+        <section class="reports-section">
+            <h2>Financial Reports</h2>
+            <div class="tab-menu">
+                <button class="tab-button" onclick="showReport('monthly')">Monthly</button>
+                <button class="tab-button" onclick="showReport('quarterly')">Quarterly</button>
+                <button class="tab-button" onclick="showReport('yearly')">Yearly</button>
+            </div>
+            <div class="report-content" id="reportContent">
+                <p>Select a period to view calculated report totals.</p>
+            </div>
+            
+            <!-- Form to manually add reports -->
+            <div class="add-report-form">
+                <h3>Add New Report</h3>
+                <form id="reportForm">
+                    <label for="reportType">Report Type:</label>
+                    <select id="reportType" required>
+                        <option value="monthly">Monthly</option>
+                        <option value="quarterly">Quarterly</option>
+                        <option value="yearly">Yearly</option>
+                    </select>
+
+                    <label for="reportTitle">Title:</label>
+                    <input type="text" id="reportTitle" required>
+
+                    <label for="reportDescription">Description:</label>
+                    <textarea id="reportDescription" rows="4" required></textarea>
+
+                    <label for="reportAmount">Amount (₹):</label>
+                    <input type="number" id="reportAmount" required>
+
+                    <button type="submit">Add Report</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2023 Wealth Smith. All rights reserved. | <a href="#privacy">Privacy Policy</a> | <a href="#contact">Contact Us</a></p>
+    </footer>
+
+    <script>
+        // Store reports in an array
+        const reports = [];
+
+        function showReport(period) {
+            const filteredReports = reports.filter(report => report.type === period);
+            const totalAmount = filteredReports.reduce((sum, report) => sum + parseFloat(report.amount), 0);
+
+            const reportContent = document.getElementById('reportContent');
+            reportContent.innerHTML = `
+                <h3>${period.charAt(0).toUpperCase() + period.slice(1)} Reports</h3>
+                <p>Total Amount: ₹${totalAmount.toFixed(2)}</p>
+                <ul>
+                    ${filteredReports.map(report => `<li>${report.title}: ₹${report.amount} - ${report.description}</li>`).join('')}
+                </ul>
+            `;
+        }
+
+        // Handle report form submission
+        document.getElementById('reportForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const reportType = document.getElementById('reportType').value;
+            const reportTitle = document.getElementById('reportTitle').value;
+            const reportDescription = document.getElementById('reportDescription').value;
+            const reportAmount = document.getElementById('reportAmount').value;
+
+            const newReport = {
+                type: reportType,
+                title: reportTitle,
+                description: reportDescription,
+                amount: reportAmount
+            };
+
+            reports.push(newReport);
+
+            // Clear the form
+            document.getElementById('reportForm').reset();
+
+            alert(`New ${reportType} report added:\nTitle: ${reportTitle}\nDescription: ${reportDescription}\nAmount: ₹${reportAmount}`);
+        });
+    </script>
+</body>
+</html>
